@@ -12,4 +12,19 @@ class Product extends Model
     protected $fillable = [
 
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function prices()
+    {
+        return $this->hasMany(Price::class);
+    }
+
+    public function store()
+    {
+        return $this->hasOne(Store::class);
+    }
 }
