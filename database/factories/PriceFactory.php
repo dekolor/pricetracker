@@ -18,7 +18,7 @@ class PriceFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => '1',
+            'product_id' => rand(1, Product::all()->count()),
             'price' => fake()->randomNumber()
         ];
     }

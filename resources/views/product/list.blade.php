@@ -43,8 +43,8 @@
                                     {{ $product->store->name }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    @if(isset($product->prices->price))
-                                        {{ $product->prices->price }}
+                                    @if($product->prices->isNotEmpty())
+                                        {{ $product->prices->last()->price }}
                                     @else
                                         No price
                                     @endif
