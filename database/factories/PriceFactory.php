@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class PriceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'product_id' => '1',
+            'price' => fake()->randomNumber()
         ];
     }
 }
