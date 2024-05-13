@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('product.list', [
             'products' => Product::where('user_id', '1')->get()
+        ]);
+    }
+
+    public function show(Product $product)
+    {
+        return view('product.show', [
+            'product' => Product::where('id' , $product->id)->first()
         ]);
     }
 }
