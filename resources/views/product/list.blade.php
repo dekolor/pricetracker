@@ -17,13 +17,13 @@
                                     Product name
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Link
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Store
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Price
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Actions
                                 </th>
                             </tr>
                             </thead>
@@ -31,11 +31,8 @@
                             @foreach($products as $product)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $product->name }}
+                                    <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
                                 </th>
-                                <td class="px-6 py-4">
-                                    {{ $product->url }}
-                                </td>
                                 <td class="px-6 py-4">
                                     {{ $product->store->name }}
                                 </td>
@@ -45,6 +42,10 @@
                                     @else
                                         No price
                                     @endif
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a target="_blank" href="{{ $product->url }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Product link</a>
+                                    <a href="/products/{{ $product->id }}" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Details</a>
                                 </td>
                             </tr>
                             @endforeach
