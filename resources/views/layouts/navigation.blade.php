@@ -20,6 +20,10 @@
                         {{ __('Products') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('product.create')" :active="request()->routeIs('product.create')">
+                        {{ __('Add product') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('store.index')" :active="request()->routeIs('store.index')">
                         {{ __('Stores') }}
                     </x-nav-link>
