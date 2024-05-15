@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return view('product.list', [
-            'products' => Product::where('user_id', '1')->get()
+            'products' => Product::where('user_id', $request->user()->id)->get()
         ]);
     }
 
